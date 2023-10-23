@@ -5,16 +5,17 @@ using UnityEngine;
 public class WreckingBall : MonoBehaviour
 {
     [SerializeField]
-    private float returnDelay = 1;
+    public float returnDelay = 1;
     [SerializeField]
-    private float launchForce = 30;
+    public float launchForce = 30;
     [SerializeField]
-    private float returnIntervalSeconds = 5; [SerializeField]
+    public float returnIntervalSeconds = 5; 
+    [SerializeField]
     AnimationCurve curve;
 
     private Rigidbody rb;
     private Transform ballStart;
-    private bool readyToLaunch = true;
+    public bool readyToLaunch = true;
 
     void Start()
     {

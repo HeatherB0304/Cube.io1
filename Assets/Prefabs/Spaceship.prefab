@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8398957118757539222}
   - component: {fileID: 3649981677096437711}
   - component: {fileID: 4048832128453953907}
-  - component: {fileID: 844257081125876497}
+  - component: {fileID: 6253563892501379292}
   m_Layer: 0
   m_Name: WreckingBall
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 3.7121, y: 3.7121, z: 3.7121}
   m_Children: []
   m_Father: {fileID: 8387099783277080966}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7112716954564411926
 MeshFilter:
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &844257081125876497
+--- !u!114 &6253563892501379292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnDelay: 1
   launchForce: 60
-  returnIntervalSeconds: 1
+  returnIntervalSeconds: 2
   curve:
     serializedVersion: 2
     m_Curve:
@@ -143,15 +143,16 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 3.0913892
-      outSlope: 3.0913892
+      inSlope: 3.9956791
+      outSlope: 3.9956791
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.0373832
+      inWeight: 0.022429883
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  readyToLaunch: 1
 --- !u!1 &2426751474784812172
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +181,7 @@ Transform:
   m_LocalScale: {x: 0.16559538, y: 0.59574425, z: 0.17088}
   m_Children: []
   m_Father: {fileID: 3200698549715008114}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2472353667709688859
 GameObject:
@@ -213,7 +214,7 @@ Transform:
   m_LocalScale: {x: 4.08562, y: 4.188636, z: 3.6055117}
   m_Children: []
   m_Father: {fileID: 8387099783277080966}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9065122482752412664
 MeshFilter:
@@ -307,10 +308,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6.522797, y: 1.6785725, z: 5.3680787}
   m_Children:
-  - {fileID: 1088976998963038602}
   - {fileID: 7784882703403996729}
   m_Father: {fileID: 8387099783277080966}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8842429782881472669
 MeshFilter:
@@ -388,6 +388,8 @@ GameObject:
   - component: {fileID: 5735065151775670519}
   - component: {fileID: 558742525627457471}
   - component: {fileID: 4219826664755406427}
+  - component: {fileID: 2779504573320204907}
+  - component: {fileID: 361083556726754707}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Untagged
@@ -406,6 +408,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1088976998963038602}
   - {fileID: 3200698549715008114}
   - {fileID: 231058885951680466}
   - {fileID: 5536877919244617503}
@@ -454,8 +457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eec64ec4d6c7064ea0460713c7fba3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
-  rotSpeed: 30
+  speed: 1600
+  rotSpeed: 500
 --- !u!114 &4219826664755406427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +469,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 007df7ce18b68da4f8f620a81abdce71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2779504573320204907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227174055315406224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1130c945c19504a98a489ab0f5dc62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipCam: {fileID: 361083556726754707}
+  launchForce: 30
+  returnDelay: 1
+  returnIntervalSeconds: 5
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  readyToLaunch: 1
+--- !u!114 &361083556726754707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227174055315406224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1cbdc678abcf9498a635c740b36ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6723786018951401380
@@ -498,7 +536,7 @@ Transform:
   m_LocalScale: {x: 0.34593, y: 0.34593, z: 0.34593}
   m_Children: []
   m_Father: {fileID: 8387099783277080966}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!198 &7338072203215772155
 ParticleSystem:
@@ -5298,10 +5336,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7782787202037796948}
   m_LocalRotation: {x: -0.28720695, y: 0.00057241315, z: -0.00017075984, w: -0.9578684}
-  m_LocalPosition: {x: 0.02295637, y: 6.0817347, z: -2.1136694}
-  m_LocalScale: {x: 0.1533085, y: 0.35771596, z: 0.23523107}
+  m_LocalPosition: {x: 0.14974022, y: 10.208632, z: -11.346344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3200698549715008114}
+  m_Father: {fileID: 8387099783277080966}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &7719326994071559104
